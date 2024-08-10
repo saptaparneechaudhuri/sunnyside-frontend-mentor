@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0 10rem;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+@layer components {
+  .landing {
+    background-image: url("/images/desktop/image-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .content-grid > div {
+    /* padding: 10rem; */
+    display: grid;
+    /* grid-template-columns: repeat(12, 1fr); */
+    justify-content: center;
+  }
+
+  /* for square grids */
+
+  .content-grid > div::before {
+    content: "";
+    padding-top: 100%;
+    /* background: red; */
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    /* grid-area: 1 / 1 / 2 / 2; */
+  }
+
+  .content-grid > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    /* grid-area: 1 / 1 / 2 / 2; */
+  }
+
+  .content-grid > div > div {
+    width: 100%;
+    height: 100%;
+
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* grid-area: 1 / 1 / 2 / 2; */
+  }
+}
+
+@layer utilities {
+  .list {
+    @apply px-5 py-1 rounded-full hover:bg-sky-200/50 hover:uppercase transition-all;
+  }
+
+  .learn-more {
+    @apply absolute border-b-8 border-b-primary-yellow  rounded-md block bottom-0 w-1/4 -z-10 -translate-x-2;
+  }
+}
