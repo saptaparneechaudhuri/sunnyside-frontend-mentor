@@ -11,7 +11,7 @@
 body {
   width: 100%;
   height: 100%;
-  padding: 0 10rem;
+  /* padding: 0 10rem; */
 }
 
 #root {
@@ -64,12 +64,25 @@ body {
 
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    padding: 5rem;
+    /* padding: 5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     /* grid-area: 1 / 1 / 2 / 2; */
+  }
+
+  .clippy {
+    clip-path: polygon(
+      0% 13%,
+      90% 13%,
+
+      100% 0%,
+
+      100% 13%,
+      100% 100%,
+      0% 100%
+    );
   }
 }
 
@@ -79,6 +92,6 @@ body {
   }
 
   .learn-more {
-    @apply absolute border-b-8 border-b-primary-yellow  rounded-md block bottom-0 w-1/4 -z-10 -translate-x-2;
+    @apply absolute border-b-8   rounded-md block bottom-0 w-1/4 -z-10 -translate-x-2;
   }
 }
