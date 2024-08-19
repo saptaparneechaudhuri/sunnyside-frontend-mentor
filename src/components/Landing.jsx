@@ -12,7 +12,7 @@ const Landing = ({ onClickArrow }) => {
         <img
           src="/images/icon-arrow-down.svg"
           alt="arrow-down"
-          className="cursor-pointer"
+          className="cursor-pointer md:block hidden"
         />
       </div>
     </section>
